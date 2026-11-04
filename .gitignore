@@ -1,0 +1,24 @@
+.idea/
+.vscode/
+*.iml
+
+# Java
+backend/target/
+
+# Python
+ml-service/.venv/
+ml-service/__pycache__/
+ml-service/**/*.pyc
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+Thumbs.db
+.DS_Store
