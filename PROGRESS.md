@@ -27,9 +27,28 @@
 - Docker reserved host port `5432`, so PostgreSQL is mapped to host port
   `5433` while retaining container port `5432`.
 - Started PostgreSQL and Redis successfully; both containers report healthy.
+- Created the initial backend user/auth slice:
+  - `POST /api/auth/register`
+  - `GET /api/users/{id}`
+  - BCrypt password hashing and duplicate-email handling.
+  - Flyway `V1__create_users_table` migration.
+- Added Spring Security API configuration with CSRF disabled for the API,
+  CORS support, public auth routes, and public user lookup for development.
+- Added the initial React entry point and landing screen; Vite frontend is
+  verified at `http://localhost:5173`.
+- Verified registration with HTTP 201 and user lookup with HTTP 200.
+- Verified duplicate registration returns HTTP 409.
+- Verified backend tests and frontend production build.
+
+## Current runtime
+
+- Backend: `http://localhost:8080`
+- Frontend: `http://localhost:5173`
+- PostgreSQL: host port `5433`, container port `5432`
+- Redis: host port `6379`
+- Kafka: not started; remains behind the `kafka` Compose profile.
 
 ## Next step
 
-Implement the first backend application slice. Kafka is intentionally behind
-the `kafka` Compose profile for a later milestone. PostgreSQL and Redis are
-running; Kafka has not been started.
+Implement login/token authentication and protect user/business APIs. Keep
+Kafka, fraud detection, and transaction features in later milestones.

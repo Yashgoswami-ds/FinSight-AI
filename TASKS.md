@@ -9,4 +9,9 @@
 - [x] Validate local PostgreSQL, Redis, and Kafka Compose configuration.
 - [x] Start and health-check PostgreSQL and Redis after approval.
 - [ ] Enable and verify Kafka in a later milestone.
-- [ ] Add the first backend application slice.
+- [x] Add the first backend application slice.
+- [x] Add user registration with validation and BCrypt password hashing.
+- [x] Add user lookup API by UUID.
+- [x] Add initial React entry point and landing screen.
+- [ ] Add login and token-based authentication.
+- [ ] Add transaction and fraud-risk application slices.
