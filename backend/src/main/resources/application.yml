@@ -4,9 +4,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/${POSTGRES_DB:finsight}
-    username: ${POSTGRES_USER:finsight}
-    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/finsight
+    username: finsight
+    password: "Yash@2004"
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -34,3 +34,8 @@ management:
   endpoint:
     health:
       show-details: always
+finsight:
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+      expiration-ms: 900000
